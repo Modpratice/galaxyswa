@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070711" />
+  <title>GalaxySwap — Non-custodial DeFi super-app</title>
+  <meta name="description" content="Non-custodial DeFi super-app: multi-chain Swap &amp; Bridge and Transactions delay — one interface, you always hold your keys." />
+  <meta name="application-name" content="GalaxySwap" />
+  
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:title" content="GalaxySwap" />
+  <meta property="og:description" content="Non-custodial DeFi super-app: multi-chain Swap &amp; Bridge and Transactions delay — one interface, you always hold your keys." />
+  <meta property="og:url" content="https://galaxyswap.app" />
+  <meta property="og:site_name" content="GalaxySwap" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./images/og.png" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GalaxySwap" />
+  <meta name="twitter:description" content="Non-custodial DeFi super-app: multi-chain Swap &amp; Bridge and Transactions delay — one interface, you always hold your keys." />
+  <meta name="twitter:image" content="./images/og.png" />
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="kast1/index.html" />
+  <link rel="apple-touch-icon" href="./images/icon-512.png" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container-page header-inner">
+      <!-- Logo -->
+      <a href="kast1/index.html" class="brand-link" aria-label="GalaxySwap home">
+        <svg class="brand-logo-svg" width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="gxs-nav" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#8b5cf6"></stop>
+              <stop offset="1" stop-color="#0ea5e9"></stop>
+            </linearGradient>
+          </defs>
+          <circle cx="16" cy="16" r="5" fill="url(#gxs-nav)"></circle>
+          <ellipse cx="16" cy="16" rx="14" ry="6" transform="rotate(-30 16 16)" stroke="url(#gxs-nav)" stroke-width="1.6" fill="none"></ellipse>
+          <circle cx="27" cy="9.5" r="1.8" fill="#a78bfa"></circle>
+        </svg>
+        <span class="brand-title">Galaxy<span class="highlight">Swap</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a class="nav-link js-open-swap" href="kast1/index.html">Swap</a>
+        <a class="nav-link js-open-swap" href="kast11/index.html">Pools</a>
+        <a class="nav-link js-connect-wallet" href="kast11/index.html">Portfolio</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <label class="language-selector-wrapper" aria-label="Language">
+          <svg class="lang-icon-globe" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"></circle>
+            <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" stroke="currentColor" stroke-width="1.6"></path>
+          </svg>
+          <select id="langSelect" class="lang-select" aria-label="Select Language">
+            <option value="en" selected>English</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="ko">한국어</option>
+            <option value="ja">日本語</option>
+            <option value="zh">中文</option>
+          </select>
+          <svg class="lang-icon-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </label>
+
+        <!-- Launch App Outline Button -->
+        <button id="btnLaunchAppNav" class="btn btn-sm btn-outline hidden-sm js-open-swap">
+          Launch app
+        </button>
+
+        <!-- Connect Wallet Button -->
+        <button class="btn btn-sm btn-wallet js-connect-wallet" id="btnConnectWalletNav">
+          Connect Wallet
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Panel -->
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <a class="mobile-nav-link js-open-swap" href="kast1/index.html">Swap</a>
+      <a class="mobile-nav-link js-open-swap" href="kast1/index.html">Pools</a>
+      <a class="mobile-nav-link js-connect-wallet" href="kast1/index.html">Portfolio</a>
+      <a class="mobile-nav-link js-open-swap" href="kast1/index.html">Launch App</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="site-main">
+
+    <!-- Hero Section -->
+    <section class="container-page hero-section">
+      <div class="hero-content">
+        <!-- Badge -->
+        <div>
+          <span class="hero-pill-badge" id="heroBadge">
+            Non-custodial DeFi super-app
+          </span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="hero-heading">
+          <span id="heroTitleLead">Everything DeFi,</span>
+          <span class="gradient-text" id="heroTitleHighlight">one interface</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-subtext" id="heroSubtitle">
+          Multi-chain swap &amp; bridge and liquidity provision — you always hold your keys.
+        </p>
+
+        <!-- Action CTAs -->
+        <div class="hero-cta-group">
+          <button class="btn btn-md btn-brand-gradient js-open-faucet" id="btnOpenApp">
+            Galaxyswap faucet
+          </button>
+          <button class="btn btn-md btn-outline js-connect-wallet" id="btnViewPortfolio">
+            View portfolio
+          </button>
+        </div>
+
+        <!-- Supported Chains -->
+        <div class="supported-chains-container">
+          <span class="supported-chains-title" id="supportedChainsTitle">
+            SUPPORTED CHAINS
+          </span>
+          <div class="chains-badge-list">
+            <span class="chain-badge">
+              <span class="chain-dot" style="background-color: #627EEA;" aria-hidden="true"></span>
+              Ethereum
+            </span>
+            <span class="chain-badge">
+              <span class="chain-dot" style="background-color: #28A0F0;" aria-hidden="true"></span>
+              Arbitrum One
+            </span>
+            <span class="chain-badge">
+              <span class="chain-dot" style="background-color: #0052FF;" aria-hidden="true"></span>
+              Base
+            </span>
+            <span class="chain-badge">
+              <span class="chain-dot" style="background-color: #FF0420;" aria-hidden="true"></span>
+              Optimism
+            </span>
+            <span class="chain-badge">
+              <span class="chain-dot" style="background-color: #8247E5;" aria-hidden="true"></span>
+              Polygon PoS
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Pillars Section (Swap & Bridge / Transactions delay) -->
+    <section class="container-page pillars-section">
+      <div class="pillars-grid">
+        <!-- Pillar Card: Swap & Bridge -->
+        <a href="kast1/index.html" class="pillar-card-link js-open-swap">
+          <div class="pillar-card">
+            <div class="card-inner-swap">
+              <h3 class="pillar-title" id="pillarSwapTitle">Swap &amp; Bridge</h3>
+              <p class="pillar-desc" id="pillarSwapDesc">
+                Swap and bridge tokens across chains via LI.FI — optimal routes in one seamless transaction.
+              </p>
+              <span class="pillar-action">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Pillar Card: Transactions delay -->
+        <a href="kast1/index.html" class="pillar-card-link js-open-swap">
+          <div class="pillar-card">
+            <div class="card-inner-Transactions-delay">
+              <h3 class="pillar-title" id="pillarPoolsTitle">Transactions delay</h3>
+              <p class="pillar-desc" id="pillarPoolsDesc">
+                Resolve Transactions delay and ipfs issues. Earn trading fees on idle capital.
+              </p>
+              <span class="pillar-action">Explore →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Core Principles Section (Non-custodial, Multi-chain, Transparent) -->
+    <section class="container-page principles-section">
+      <div class="principles-grid">
+        <a href="kast1/index.html" class="principle-card-link" aria-label="Read more about Non-custodial">
+          <div class="principle-card">
+            <div class="principle-inner">
+              <div class="principle-header">
+                <h4 class="principle-title" id="principleNonCustodialTitle">Non-custodial</h4>
+                <span class="principle-arrow" aria-hidden="true">→</span>
+              </div>
+              <p class="principle-desc" id="principleNonCustodialDesc">
+                You always hold your keys. GalaxySwap never holds your assets.
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <a href="kast1/index.html" class="principle-card-link" aria-label="Read more about Multi-chain">
+          <div class="principle-card">
+            <div class="principle-inner">
+              <div class="principle-header">
+                <h4 class="principle-title" id="principleMultiChainTitle">Multi-chain</h4>
+                <span class="principle-arrow" aria-hidden="true">→</span>
+              </div>
+              <p class="principle-desc" id="principleMultiChainDesc">
+                Ethereum, Arbitrum, Base, Optimism, Polygon — configured per chainId.
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <a href="kast1/index.html" class="principle-card-link" aria-label="Read more about Transparent">
+          <div class="principle-card">
+            <div class="principle-inner">
+              <div class="principle-header">
+                <h4 class="principle-title" id="principleTransparentTitle">Transparent</h4>
+                <span class="principle-arrow" aria-hidden="true">→</span>
+              </div>
+              <p class="principle-desc" id="principleTransparentDesc">
+                See fees, slippage and liquidation price before you sign.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-page footer-inner">
+      <!-- Footer Logo -->
+      <span class="brand-link" style="cursor: default;">
+        <svg class="brand-logo-svg" width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="gxs-footer" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#8b5cf6"></stop>
+              <stop offset="1" stop-color="#0ea5e9"></stop>
+            </linearGradient>
+          </defs>
+          <circle cx="16" cy="16" r="5" fill="url(#gxs-footer)"></circle>
+          <ellipse cx="16" cy="16" rx="14" ry="6" transform="rotate(-30 16 16)" stroke="url(#gxs-footer)" stroke-width="1.6" fill="none"></ellipse>
+          <circle cx="27" cy="9.5" r="1.8" fill="#a78bfa"></circle>
+        </svg>
+        <span class="brand-title">Galaxy<span class="highlight">Swap</span></span>
+      </span>
+
+      <!-- Tagline -->
+      <p class="footer-tagline" id="footerTagline">
+        Non-custodial. You always hold your keys. · galaxyswap.app
+      </p>
+
+      <!-- Legal Links -->
+      <nav class="footer-nav">
+        <a href="#terms" class="footer-link" id="termsLink">Terms of Service</a>
+        <a href="#privacy" class="footer-link" id="privacyLink">Privacy Policy</a>
+      </nav>
+
+      <!-- Copyright -->
+      <p class="footer-copyright">
+        © 2026 GalaxySwap
+      </p>
+    </div>
+  </footer>
+
+  <!-- Connect Wallet Modal (RainbowKit Style) -->
+  <div class="modal-overlay" id="walletModal" role="dialog" aria-modal="true" aria-labelledby="walletModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="walletModalTitle">Connect a Wallet</h3>
+        <button class="modal-close-btn" id="closeWalletModal" aria-label="Close Modal">✕</button>
+      </div>
+      <div class="wallet-option-list">
+        <div class="wallet-option-item" data-wallet="MetaMask">
+          <div class="wallet-info">
+            <span class="wallet-icon" style="background:#f6851b;color:#fff;">🦊</span>
+            <span>MetaMask</span>
+          </div>
+          <span class="wallet-badge-popular">Popular</span>
+        </div>
+        <div class="wallet-option-item" data-wallet="Coinbase Wallet">
+          <div class="wallet-info">
+            <span class="wallet-icon" style="background:#0052ff;color:#fff;">🔵</span>
+            <span>Coinbase Wallet</span>
+          </div>
+        </div>
+        <div class="wallet-option-item" data-wallet="Rainbow">
+          <div class="wallet-info">
+            <span class="wallet-icon" style="background:#8b5cf6;color:#fff;">🌈</span>
+            <span>Rainbow</span>
+          </div>
+        </div>
+        <div class="wallet-option-item" data-wallet="WalletConnect">
+          <div class="wallet-info">
+            <span class="wallet-icon" style="background:#3b99fc;color:#fff;">⚡</span>
+            <span>WalletConnect</span>
+          </div>
+        </div>
+        <div class="wallet-option-item" data-wallet="Phantom">
+          <div class="wallet-info">
+            <span class="wallet-icon" style="background:#ab9ff2;color:#fff;">👻</span>
+            <span>Phantom</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.45);text-align:center;margin-top:1rem;">
+        By connecting a wallet, you agree to GalaxySwap Terms of Service.
+      </p>
+    </div>
+  </div>
+
+  <!-- Interactive Swap Modal (Live Simulator) -->
+  <div class="modal-overlay" id="swapModal" role="dialog" aria-modal="true" aria-labelledby="swapModalTitle">
+    <div class="modal-card swap-modal-card">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="5" fill="#8b5cf6"></circle>
+            <ellipse cx="16" cy="16" rx="14" ry="6" transform="rotate(-30 16 16)" stroke="#8b5cf6" stroke-width="1.6" fill="none"></ellipse>
+          </svg>
+          <h3 class="modal-title" id="swapModalTitle">Multi-Chain Swap &amp; Bridge</h3>
+        </div>
+        <button class="modal-close-btn" id="closeSwapModal" aria-label="Close Modal">✕</button>
+      </div>
+
+      <!-- From Box -->
+      <div class="swap-input-box">
+        <div class="swap-input-header">
+          <span>You Pay</span>
+          <span>Balance: 1.450 ETH</span>
+        </div>
+        <div class="swap-input-row">
+          <input type="number" id="swapAmountInput" class="swap-amount-input" value="1.0" min="0" step="0.1" placeholder="0.0" />
+          <div class="token-pill">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#627EEA;"></span>
+            <span>ETH</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Switch Direction Button -->
+      <button class="swap-direction-btn" id="swapDirectionBtn" title="Reverse Route">
+        ↓
+      </button>
+
+      <!-- To Box -->
+      <div class="swap-input-box">
+        <div class="swap-input-header">
+          <span>You Receive (Estimated)</span>
+          <span>Balance: 0.00 USDC</span>
+        </div>
+        <div class="swap-input-row">
+          <span id="swapOutputAmount" style="font-size:1.5rem;font-weight:600;color:#fff;">2840.50</span>
+          <div class="token-pill">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2775ca;"></span>
+            <span>USDC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route Details -->
+      <div class="swap-details-box">
+        <div class="swap-details-row">
+          <span>Exchange Rate</span>
+          <span id="swapExchangeRate">1 ETH ≈ 2,840.50 USDC</span>
+        </div>
+        <div class="swap-details-row">
+          <span>Routing Protocol</span>
+          <span style="color:#a78bfa;">LI.FI Optimal Route</span>
+        </div>
+        <div class="swap-details-row">
+          <span>Est. Network Fee</span>
+          <span>$1.85 (Ethereum)</span>
+        </div>
+        <div class="swap-details-row">
+          <span>Max Slippage</span>
+          <span>0.5%</span>
+        </div>
+      </div>
+
+      <!-- Execute Action -->
+      <button class="btn btn-md btn-brand-gradient" id="executeSwapBtn" style="width:100%;">
+        Execute Non-Custodial Swap
+      </button>
+    </div>
+  </div>
+
+  <!-- Galaxy Faucet Modal -->
+  <div class="modal-overlay" id="faucetModal" role="dialog" aria-modal="true" aria-labelledby="faucetModalTitle">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="faucet-gxs" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="32" y2="32">
+                <stop stop-color="#8b5cf6"></stop>
+                <stop offset="1" stop-color="#0ea5e9"></stop>
+              </linearGradient>
+            </defs>
+            <circle cx="16" cy="16" r="5" fill="url(#faucet-gxs)"></circle>
+            <ellipse cx="16" cy="16" rx="14" ry="6" transform="rotate(-30 16 16)" stroke="url(#faucet-gxs)" stroke-width="1.6" fill="none"></ellipse>
+            <circle cx="27" cy="9.5" r="1.8" fill="#a78bfa"></circle>
+          </svg>
+          <h3 class="modal-title" id="faucetModalTitle">Galaxy Faucet</h3>
+        </div>
+        <button class="modal-close-btn" id="closeFaucetModal" aria-label="Close Modal">✕</button>
+      </div>
+      
+      <p style="font-size:0.875rem;color:rgba(255,255,255,0.7);margin-bottom:1rem;line-height:1.5;">
+        Claim free multi-chain testnet tokens to test swaps, bridge routing, and Uniswap V3 liquidity on GalaxySwap.
+      </p>
+
+      <div style="margin-bottom:0.75rem;">
+        <label style="display:block;font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:0.375rem;text-transform:uppercase;letter-spacing:0.05em;">Select Network</label>
+        <select id="faucetNetworkSelect" class="lang-select" style="width:100%;padding-left:1rem;background-color:rgba(18,18,37,0.8);border-color:var(--space-600);">
+          <option value="Arbitrum Sepolia">Arbitrum Sepolia (ChainId 421614)</option>
+          <option value="Ethereum Sepolia">Ethereum Sepolia (ChainId 11155111)</option>
+          <option value="Base Sepolia">Base Sepolia (ChainId 84532)</option>
+          <option value="Optimism Sepolia">Optimism Sepolia (ChainId 11155420)</option>
+          <option value="Polygon Amoy">Polygon Amoy (ChainId 80002)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:0.75rem;">
+        <label style="display:block;font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:0.375rem;text-transform:uppercase;letter-spacing:0.05em;">Recipient Wallet</label>
+        <input type="text" id="faucetAddressInput" placeholder="0x... or connect wallet" style="width:100%;height:2.5rem;background:rgba(18,18,37,0.8);border:1px solid var(--space-600);border-radius:0.5rem;padding:0 0.75rem;color:#fff;font-family:monospace;font-size:0.875rem;" />
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:0.375rem;text-transform:uppercase;letter-spacing:0.05em;">Drip Amount</label>
+        <div style="display:flex;gap:0.5rem;">
+          <button type="button" class="faucet-token-btn btn btn-sm btn-outline active-faucet" data-token="0.05 ETH" style="flex:1;border-color:var(--galaxy-500);background:rgba(139,92,246,0.15);">0.05 ETH</button>
+          <button type="button" class="faucet-token-btn btn btn-sm btn-outline" data-token="250 USDC" style="flex:1;">250 USDC</button>
+          <button type="button" class="faucet-token-btn btn btn-sm btn-outline" data-token="50 GALAXY" style="flex:1;">50 GALAXY</button>
+        </div>
+      </div>
+
+      <button class="btn btn-md btn-brand-gradient" id="btnClaimFaucet" style="width:100%;">
+        Drip Testnet Tokens
+      </button>
+
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.4);text-align:center;margin-top:0.75rem;">
+        Rate limit: 1 request every 24 hours per wallet.
+      </p>
+    </div>
+  </div>
+
+  <!-- Legal Modal -->
+  <div class="modal-overlay" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="legalModalTitle">GalaxySwap Notice</h3>
+        <button class="modal-close-btn" id="closeLegalModal" aria-label="Close Modal">✕</button>
+      </div>
+      <div id="legalModalBody" style="font-size: 0.875rem; max-height: 60vh; overflow-y: auto;">
+        <!-- Injected via script -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toastNotice">
+    <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#38bdf8;"></span>
+    <span id="toastMsg">Notification message</span>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

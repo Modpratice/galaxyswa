@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070711" />
+  <title>Non-custodial Security — GalaxySwap</title>
+  <meta name="description" content="You always hold your keys. Learn how GalaxySwap's non-custodial architecture guarantees asset safety." />
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    .subpage-container {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 3rem 1rem 5rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--galaxy-400);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.15s, transform 0.15s;
+    }
+    .back-btn:hover {
+      color: #fff;
+      transform: translateX(-3px);
+    }
+    .detail-card {
+      background: rgba(11, 11, 24, 0.7);
+      border: 1px solid var(--space-700);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      margin-top: 2rem;
+    }
+    .feature-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .feature-box {
+      background: rgba(18, 18, 37, 0.6);
+      border: 1px solid var(--space-800);
+      border-radius: 1rem;
+      padding: 1.25rem;
+    }
+    .feature-box h4 {
+      font-size: 1.125rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .feature-box p {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 0.875rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--space-800);
+    }
+    .comparison-table th {
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-page header-inner">
+      <a href="./index.html" class="brand-link">
+        <svg class="brand-logo-svg" width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <defs>
+            <linearGradient id="gxs-nav" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#8b5cf6"></stop>
+              <stop offset="1" stop-color="#0ea5e9"></stop>
+            </linearGradient>
+          </defs>
+          <circle cx="16" cy="16" r="5" fill="url(#gxs-nav)"></circle>
+          <ellipse cx="16" cy="16" rx="14" ry="6" transform="rotate(-30 16 16)" stroke="url(#gxs-nav)" stroke-width="1.6" fill="none"></ellipse>
+          <circle cx="27" cy="9.5" r="1.8" fill="#a78bfa"></circle>
+        </svg>
+        <span class="brand-title">Galaxy<span class="highlight">Swap</span></span>
+      </a>
+      <div class="header-actions">
+        <a href="./index.html" class="btn btn-sm btn-outline">← Back to Home</a>
+        <button class="btn btn-sm btn-wallet js-connect-wallet">Connect Wallet</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="site-main">
+    <div class="subpage-container">
+      <a href="./index.html" class="back-btn">← Back to Overview</a>
+
+      <span class="hero-pill-badge">Core Principle</span>
+      <h1 class="hero-heading" style="font-size: 2.75rem; text-align: left; margin-top: 0.5rem;">
+        Non-custodial: <span class="gradient-text">You always hold your keys</span>
+      </h1>
+      <p class="hero-subtext" style="text-align: left; margin-left: 0;">
+        GalaxySwap never holds your assets, never retains your private keys, and never requires centralized accounts. Every transaction executes straight from your self-custody wallet directly to verified on-chain smart contracts.
+      </p>
+
+      <div class="detail-card">
+        <h3 style="font-size: 1.25rem; font-weight: 600; color: #fff;">How GalaxySwap Protects Your Sovereignty</h3>
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9375rem; margin-top: 0.5rem; line-height: 1.6;">
+          Centralized exchanges and custodial bridges hold user funds in pooled hot wallets, exposing users to counterparty insolvency, withdrawal freezes, and systemic hacks. GalaxySwap is completely client-side:
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-box">
+            <h4>🔐 Client-Side Signatures</h4>
+            <p>Every token swap, liquidity deposit, or bridge execution is packaged into raw calldata in your browser and signed by your local wallet (MetaMask, Rainbow, Coinbase Wallet, etc.).</p>
+          </div>
+          <div class="feature-box">
+            <h4>⚡ Atomic Settlement</h4>
+            <p>Transactions route through audited DEX protocols (Uniswap V3) and cross-chain bridges (LI.FI). If any leg of a transaction fails, it reverts immediately—funds never get stuck in limbo.</p>
+          </div>
+          <div class="feature-box">
+            <h4>🚫 No Custodial Middlemen</h4>
+            <p>GalaxySwap operates zero centralized deposit contracts, zero custodial holding wallets, and zero withdrawal queues. Your keys, your crypto.</p>
+          </div>
+          <div class="feature-box">
+            <h4>🛡️ Permissionless &amp; Censorship Resistant</h4>
+            <p>Even if GalaxySwap's web servers were offline, your positions are permanently on Ethereum, Arbitrum, Base, Optimism, and Polygon and redeemable through any standard RPC node.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <h3 style="font-size: 1.25rem; font-weight: 600; color: #fff;">GalaxySwap vs Custodial Platforms</h3>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>GalaxySwap</th>
+              <th>Custodial Exchanges</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color: #fff; font-weight: 500;">Private Key Custody</td>
+              <td style="color: #38bdf8; font-weight: 600;">You hold 100% control</td>
+              <td style="color: rgba(255, 255, 255, 0.5);">Held by third-party exchange</td>
+            </tr>
+            <tr>
+              <td style="color: #fff; font-weight: 500;">Withdrawal Freezes</td>
+              <td style="color: #38bdf8; font-weight: 600;">Impossible on-chain</td>
+              <td style="color: rgba(255, 255, 255, 0.5);">Subject to exchange terms</td>
+            </tr>
+            <tr>
+              <td style="color: #fff; font-weight: 500;">Account &amp; KYC</td>
+              <td style="color: #38bdf8; font-weight: 600;">None required</td>
+              <td style="color: rgba(255, 255, 255, 0.5);">Identity verification required</td>
+            </tr>
+            <tr>
+              <td style="color: #fff; font-weight: 500;">Smart Contract Routing</td>
+              <td style="color: #38bdf8; font-weight: 600;">Audited Uniswap V3 &amp; LI.FI</td>
+              <td style="color: rgba(255, 255, 255, 0.5);">Proprietary internal orderbooks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="./index.html" class="btn btn-md btn-brand-gradient">
+          Return to Super-App
+        </a>
+        <a href="./multi-chain.html" class="btn btn-md btn-outline">
+          Explore Multi-chain Support →
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-page footer-inner">
+      <span class="brand-link" style="cursor: default;">
+        <span class="brand-title">Galaxy<span class="highlight">Swap</span></span>
+      </span>
+      <p class="footer-tagline">Non-custodial. You always hold your keys. · galaxyswap.app</p>
+      <p class="footer-copyright">© 2026 GalaxySwap</p>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
